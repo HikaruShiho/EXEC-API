@@ -40,12 +40,18 @@ Route::prefix('reservation')->group(function () {
     Route::post('/', [ReservationController::class, 'create']);
     //予約中のマシン取得
     Route::get('/{user_id}/{gym_id}', [ReservationController::class, 'show']);
-    //予約の取り消し
-    Route::put('/{reservation_id}', [ReservationController::class, 'update']);
+    //予約キャンセル
+    Route::put('/cancel/{reservation_id}', [ReservationController::class, 'reservationCancel']);
     //予約状況確認（予約中マシンがない場合）
     Route::get('/status/{gym_id}/{machine_id}', [ReservationController::class, 'getReservationStatus']);
     //次の予約があるかどうかの確認
     Route::get('/{reservation_id}/{gym_id}/{machine_id}', [ReservationController::class, 'nextReservationExists']);
     //予約状況取得（予約中マシンがある場合）
     Route::get('/reserved/{reservation_id}/{gym_id}/{machine_id}', [ReservationController::class, 'getReservedStatus']);
+
+
+    //チェックイン
+    Route::put('/checkin/{reservation_id}', [ReservationController::class, 'checkIn']);
+    //チェックアウト
+    Route::put('/checkout/{reservation_id}', [ReservationController::class, 'checkOut']);
 });
