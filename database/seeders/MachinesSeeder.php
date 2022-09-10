@@ -16,18 +16,54 @@ class MachinesSeeder extends Seeder
     public function run()
     {
         DB::table('machines')->insert([
-            ['name' => 'パワーラック①'],
-            ['name' => 'パワーラック②'],
-            ['name' => 'パワーラック③'],
-            ['name' => 'ハーフラック①'],
-            ['name' => 'ハーフラック②'],
-            ['name' => 'ハーフラック③'],
-            ['name' => 'スミスマシン①'],
-            ['name' => 'スミスマシン②'],
-            ['name' => 'スミスマシン③'],
-            ['name' => 'アジャスタブルベンチ①'],
-            ['name' => 'アジャスタブルベンチ②'],
-            ['name' => 'アジャスタブルベンチ③'],
+            [
+                'name' => 'パワーラック①',
+                'image_path' => 'power_rack.jpg'
+            ],
+            [
+                'name' => 'パワーラック②',
+                'image_path' => 'power_rack.jpg'
+            ],
+            [
+                'name' => 'パワーラック③',
+                'image_path' => 'power_rack.jpg'
+            ],
+            [
+                'name' => 'ハーフラック①',
+                'image_path' => 'half_rack.jpg'
+            ],
+            [
+                'name' => 'ハーフラック②',
+                'image_path' => 'half_rack.jpg'
+            ],
+            [
+                'name' => 'ハーフラック③',
+                'image_path' => 'half_rack.jpg'
+            ],
+            [
+                'name' => 'スミスマシン①',
+                'image_path' => 'smith_machine.jpg'
+            ],
+            [
+                'name' => 'スミスマシン②',
+                'image_path' => 'smith_machine.jpg'
+            ],
+            [
+                'name' => 'スミスマシン③',
+                'image_path' => 'smith_machine.jpg'
+            ],
+            [
+                'name' => 'アジャスタブルベンチ①',
+                'image_path' => 'adjustable_bench.jpg'
+            ],
+            [
+                'name' => 'アジャスタブルベンチ②',
+                'image_path' => 'adjustable_bench.jpg'
+            ],
+            [
+                'name' => 'アジャスタブルベンチ③',
+                'image_path' => 'adjustable_bench.jpg'
+            ],
         ]);
     }
 }
