@@ -15,10 +15,10 @@ class ReservationController extends Controller
     public function create(Request $request)
     {
         $reservation = Reservation::create([
-            'gym_id' => 2,
-            'machine_id' => 8,
-            'user_id' => 1,
-            'is_canceled' => 1,
+            'gym_id' => $request["gym_id"],
+            'machine_id' => $request["machine_id"],
+            'user_id' => $request["user_id"],
+            'is_canceled' => 0,
         ]);
         return $reservation;
     }
@@ -51,8 +51,6 @@ class ReservationController extends Controller
      */
     public function nextReservationExists($reservation_id, $gym_id, $machine_id)
     {
-
-        dd($reservation_id, $gym_id, $machine_id);
         $reservation = Reservation::where([
             ["id", ">", $reservation_id],
             ["gym_id", "=", $gym_id],
@@ -104,10 +102,34 @@ class ReservationController extends Controller
      * @param  int $reservation_id
      * @return int $update_count
      */
-    public function update($reservation_id)
+    public function reservationCancel($reservation_id)
     {
         $update_count = Reservation::where("id", "=", $reservation_id)
-            ->update(['is_canceled' => 0]);
+            ->update(['is_canceled' => 1]);
         return $update_count;
+    }
+
+    /**
+     * チェックイン
+     * @param  int $reservation_id
+     * @return object $reservation
+     */
+    public function checkIn($reservation_id)
+    {
+        $reservation = Reservation::where("id", "=", $reservation_id)
+            ->update(['start_at' => date("Y-m-d H:i:s")]);
+        return $reservation;
+    }
+
+    /**
+     * チェックアウト
+     * @param  int $reservation_id
+     * @return object $reservation
+     */
+    public function checkOut($reservation_id)
+    {
+        $reservation = Reservation::where("id", "=", $reservation_id)
+            ->update(['end_at' => date("Y-m-d H:i:s")]);
+        return $reservation;
     }
 }
