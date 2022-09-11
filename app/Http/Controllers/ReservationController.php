@@ -20,7 +20,7 @@ class ReservationController extends Controller
             'user_id' => $request["user_id"],
             'is_canceled' => 0,
         ]);
-        return $reservation;
+        return $this->show($reservation->user_id, $reservation->gym_id);
     }
 
     /**
@@ -36,6 +36,7 @@ class ReservationController extends Controller
                 ["user_id", "=", $user_id],
                 ["gym_id", "=", $gym_id],
                 ["start_at", "=", null],
+                ["is_canceled", "=", 0],
             ])
             ->orderByDesc('created_at')
             ->first();
@@ -104,9 +105,9 @@ class ReservationController extends Controller
      */
     public function reservationCancel($reservation_id)
     {
-        $update_count = Reservation::where("id", "=", $reservation_id)
+        $reservation = Reservation::where("id", "=", $reservation_id)
             ->update(['is_canceled' => 1]);
-        return $update_count;
+        return $reservation;
     }
 
     /**
