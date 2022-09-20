@@ -17,7 +17,7 @@ class GymsSeeder extends Seeder
     {
         DB::table('gyms')->insert([
             [
-                'name' => '〇〇ジム　原宿店',
+                'name' => 'AF 原宿店',
                 'post_code' => '1234567',
                 'prefecture_id' => 13,
                 'city' => '渋谷区',
@@ -27,7 +27,17 @@ class GymsSeeder extends Seeder
                 'long' => 139.7029810171651,
             ],
             [
-                'name' => '〇〇ジム　神戸店',
+                'name' => 'AF 川口店',
+                'post_code' => '1234567',
+                'prefecture_id' => 28,
+                'city' => '川口市',
+                'block' => '飯塚2丁目',
+                'building' => '',
+                'lat' => 35.800030771908865,
+                'long' => 139.714509831419,
+            ],
+            [
+                'name' => 'AF 神戸店',
                 'post_code' => '1234567',
                 'prefecture_id' => 28,
                 'city' => '神戸市',

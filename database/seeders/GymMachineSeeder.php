@@ -22,6 +22,10 @@ class GymMachineSeeder extends Seeder
             ],
             [
                 'gym_id' => 1,
+                'machine_id' => 2,
+            ],
+            [
+                'gym_id' => 1,
                 'machine_id' => 3,
             ],
             [
@@ -29,16 +33,52 @@ class GymMachineSeeder extends Seeder
                 'machine_id' => 7,
             ],
             [
-                'gym_id' => 2,
-                'machine_id' => 1,
+                'gym_id' => 1,
+                'machine_id' => 8,
+            ],
+            [
+                'gym_id' => 1,
+                'machine_id' => 10,
             ],
             [
                 'gym_id' => 2,
-                'machine_id' => 3,
+                'machine_id' => 4,
+            ],
+            [
+                'gym_id' => 2,
+                'machine_id' => 5,
             ],
             [
                 'gym_id' => 2,
                 'machine_id' => 7,
+            ],
+            [
+                'gym_id' => 2,
+                'machine_id' => 10,
+            ],
+            [
+                'gym_id' => 2,
+                'machine_id' => 11,
+            ],
+            [
+                'gym_id' => 3,
+                'machine_id' => 1,
+            ],
+            [
+                'gym_id' => 3,
+                'machine_id' => 2,
+            ],
+            [
+                'gym_id' => 3,
+                'machine_id' => 10,
+            ],
+            [
+                'gym_id' => 3,
+                'machine_id' => 11,
+            ],
+            [
+                'gym_id' => 3,
+                'machine_id' => 12,
             ],
         ]);
     }

@@ -19,26 +19,7 @@ class UsersSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'uid' => 'shiho',
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ],
-            [
-                'uid' => 'mike',
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ],
-            [
-                'uid' => 'bob',
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ],
-            [
-                'uid' => 'john',
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ],
-            [
-                'uid' => 'edward',
+                'push_token' => 'shiho',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
