@@ -16,6 +16,7 @@ class UserController extends Controller
     {
         $user = User::create([
             'uid' => $request['uid'],
+            'push_token' => $request['push_token'],
         ]);
         return $user;
     }
