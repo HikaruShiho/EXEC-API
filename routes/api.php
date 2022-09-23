@@ -45,7 +45,7 @@ Route::prefix('reservation')->group(function () {
     //予約状況確認（予約中マシンがない場合）
     Route::get('/status/{gym_id}/{machine_id}', [ReservationController::class, 'getReservationStatus']);
     //次の予約があるかどうかの確認
-    Route::get('/{reservation_id}/{gym_id}/{machine_id}', [ReservationController::class, 'nextReservationExists']);
+    Route::get('/next_reservation_exists/{reservation_id}/{gym_id}/{machine_id}', [ReservationController::class, 'nextReservationExists']);
     //予約状況取得（予約中マシンがある場合）
     Route::get('/previous_reservation_count/{reservation_id}/{gym_id}/{machine_id}', [ReservationController::class, 'getReservedStatus']);
 
