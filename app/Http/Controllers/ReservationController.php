@@ -52,13 +52,14 @@ class ReservationController extends Controller
      */
     public function nextReservationExists($reservation_id, $gym_id, $machine_id)
     {
-        $reservation = Reservation::where([
-            ["id", ">", $reservation_id],
-            ["gym_id", "=", $gym_id],
-            ["machine_id", "=", $machine_id],
-            ["start_at", "=", null],
-            ["is_canceled", "=", 0],
-        ])->first();
+        $reservation = Reservation::with("user")
+            ->where([
+                ["id", ">", $reservation_id],
+                ["gym_id", "=", $gym_id],
+                ["machine_id", "=", $machine_id],
+                ["start_at", "=", null],
+                ["is_canceled", "=", 0],
+            ])->first();
         return $reservation;
     }
 
